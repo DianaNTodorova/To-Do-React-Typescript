@@ -18,5 +18,21 @@ right: 10px;
 cursor: pointer;
 background: none;
 border: none;
-color:red
+color:rgb(186, 8, 8)
+}
+.arrow_up{
+  position: absolute;
+  right: 40px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  color:rgb(0, 100, 0)
+}
+.arrow_down{
+  position: absolute;
+  right: 70px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  color:rgb(186, 8, 8)
 }

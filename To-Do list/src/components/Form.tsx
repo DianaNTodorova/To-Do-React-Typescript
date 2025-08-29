@@ -30,7 +30,28 @@ const handleDelete = (taskId:number):void => {
   const newTodoList = todoList.filter((task) => task.id !== taskId);
   setTodoList(newTodoList);
 }
+const handleUp = (taskId:number):void => {
+  const index = todoList.findIndex((task) => task.id === taskId); 
+  if (index > 0) {
+    const newTodoList = [...todoList];
+    const up = newTodoList[index - 1];
+    newTodoList[index - 1] = newTodoList[index];
+    newTodoList[index] = up;
+    setTodoList(newTodoList);
 
+  }
+}
+const handleDown = (taskId:number):void => {
+  const index = todoList.findIndex((task) => task.id === taskId); 
+  if (index >= 0) {
+    const newTodoList = [...todoList];
+    const down = newTodoList[index + 1];
+    newTodoList[index + 1] = newTodoList[index];
+    newTodoList[index] = down;
+    setTodoList(newTodoList);
+
+  }
+}
   return (
     <div>
     <div className="todo-container">
@@ -45,7 +66,7 @@ const handleDelete = (taskId:number):void => {
     </div>
     <div>
       {todoList.map((task: ITask) => (
-        <Todos key={task.id} data={task} handleDelete={handleDelete}  />
+        <Todos key={task.id} data={task} handleDelete={handleDelete} handleDown={handleDown} handleUp={handleUp} />
       ))}
     </div>
     </div>
