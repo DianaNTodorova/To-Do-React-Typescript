@@ -16,6 +16,7 @@ export const Form = () :ReactElement => {
     } else if(name === "dueDate"){
       setDueDate(value);
     }
+  
   }
 const handleSubmit = (e: React.FormEvent<HTMLFormElement>):void => {
   e.preventDefault();
@@ -24,7 +25,6 @@ const handleSubmit = (e: React.FormEvent<HTMLFormElement>):void => {
   console.log(todoList);
   setTask("");  
   setDueDate("");
-
 }
 const handleDelete = (taskId:number):void => {
   const newTodoList = todoList.filter((task) => task.id !== taskId);
@@ -58,9 +58,9 @@ const handleDown = (taskId:number):void => {
       <h2>To Do List</h2>
       <form onSubmit={handleSubmit} className="form">
         <label htmlFor="taskInput">New Task:</label>
-        <input type="text" id="taskInput" name="taskInput" onChange={handleChange}/>
+        <input type="text" id="taskInput" name="taskInput" value={task} onChange={handleChange}/>
         <label htmlFor="dueDate">Due Date:</label>
-        <input type="date" id="dueDate" name="dueDate" onChange={handleChange}/>
+        <input type="date" id="dueDate" name="dueDate" value={dueDate} onChange={handleChange}/>
         <button type="submit" >Add</button>
       </form>
     </div>
