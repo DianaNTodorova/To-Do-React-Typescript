@@ -12,7 +12,7 @@ export const Todos = ({data, handleDelete, handleUp, handleDown}: ITaskProps) =>
   
 
   return (
-    <div className="todos-container todo">
+    <div className="todo-container todo">
       <h3>Task: {data.taskName}</h3>
       <p>Due Date: {data.dueDate}</p>
       <button onClick={()=>handleUp(data.id)}><span className="material-symbols-outlined arrow_up">
